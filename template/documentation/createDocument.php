@@ -72,7 +72,7 @@
                 </div>
                 <div class="item">
                     <div class="inputBox">
-                        <textarea type="text" name="documentContent" required>
+                        <textarea type="text" name="documentContent" required></textarea>
                         <i>Contenu</i>
                     </div>
                 </div>

@@ -65,7 +65,7 @@
                 </div>
                 <div class="item">
                     <div class="inputBox">
-                        <textarea type="text" name="directoryDescription" required>
+                        <textarea type="text" name="directoryDescription" required></textarea>
                         <i>Description</i>
                     </div>
                 </div>
