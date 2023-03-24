@@ -1,89 +1,201 @@
 <style type="text/css">
-/* ================================================================================ */
-/*                                     General                                      */
-/* ================================================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* ================================================================ */
+/*      General                                                     */
+/* ================================================================ */
 
-*
+*, ::after, ::before
 {
-    top: 0;
-    left: 0;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
     text-decoration: none;
     list-style: none;
-    scroll-behavior: smooth;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-body 
+html, body
 {
-    background-color: azure;
-    padding: 0;
+    height: 100%;
 }
 
-/* ================================================================================ */
-/*                                       Main                                       */
-/* ================================================================================ */
+button
+{
+    background: none;
+    border: none;
+}
 
-/* ==================== Navbar ==================== */
+/* ================================================================ */
+/*      Header                                                      */
+/* ================================================================ */
 
-nav
+header
 {
     position: fixed;
-    height: 100vh;
-    width: 240px;
-    z-index: 1000;
-}
-
-nav .content 
-{
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    height: 97%;
-    width: 90%;
-    margin: 10px;
-    border: 1   px solid #142952;
-    border-radius: 10px;
-    background: #3366cc;
+    height: 100%;
+    max-height: 100vh;
+    width: 90px;
+    padding: 10px 0;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 1000;
 }
 
-nav .content header
+header.active
 {
-    width: 90%;
+    width: 240px;
+    transition: 0.5s;
+}
+
+header .navDoc
+{
+    display: none;
+    max-height: calc(100vh - 310px);
+    margin: 10px 0;
+    overflow: scroll;
+}
+
+header.active .navDoc
+{
+    display: block;
+}
+
+header .navDoc ul
+{
     margin: 10px 0;
 }
 
-nav .content header .logo
+header .navButton
 {
     display: flex;
-    justify-content: center;
+    height: 40px;
+    width: 240px;
+    margin: 5px 0;
+    background: #fff;
+    transition: 0.5s;
+}
+
+header .navButton:hover
+{
+    background: #ddd;
+    transition: 0.5s;
+}
+
+header .title:hover
+{
+    background: none;
+}
+
+header .navDocBtn
+{
+    margin: 0;
+}
+
+header .docBtn
+{
+    display: none;
+    height: 30px;
+}
+
+header .docTitle
+{
+    font-weight: 600;
+}
+
+header .docActive
+{
+    display: flex;
+}
+
+header .navButton a
+{
+    height: 100%;
     width: 100%;
 }
 
-nav .logo img {
-    width: 80%;
-}
-
-nav .content .docNav {
-    width: 90%;
-    margin: 10px 0;
-}
-
-nav .content footer
+header .navButton a.set
 {
-    width: 90%;
-    margin: 10px 0;
+    width: 25px;
 }
 
-hr
+header .navButton button
 {
-    background: #000;
-    height: 1px;
-    margin: 10px;
-    border: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 1em;
+}
+
+header .navDocBtn button
+{
+    padding-left: 10px;
+}
+
+header .docBtn button
+{
+    padding-left: 20px;
+}
+
+header .navButton button.name
+{
+    width: 205px;
+}
+
+header .navButton button.settings
+{
+    justify-content: center;
+    width: 25px;
+    padding: 0;
+}
+
+header .navButton a.set button.settings
+{
+    display: none;
+}
+
+header .navButton:hover a.set button.settings
+{
+    display: flex;
+}
+
+header .navButton button img
+{
+    height: 60%;
+    width: 60%;
+}
+
+header .navButton button img.icon
+{
+    height: 30px;
+    width: 30px;
+    margin: 0 30px;
+}
+
+header .navButton button span
+{
+    display: none;
+    margin: 10px 0;
+    color: #000;
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+header .title button span
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+header.active .navButton button span
+{
+    display: inline-block;
 }
 
 /* ===================== Page ===================== */
@@ -125,5 +237,16 @@ main .content .svg
 {
     height: 500px;
     width: 500px;
+}
+
+::-webkit-scrollbar {
+    height: 0;
+    width: 5px;
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #999999;
+    backdrop-filter: blur(1px);
 }
 </style>

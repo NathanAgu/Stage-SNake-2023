@@ -22,6 +22,8 @@
         include("../assets/css/patterns-css.php");
     ?>
 
+    <script src="../assets/js/main.js" defer></script>
+
     <!---------- Script titre onglet site ---------->
     <?php
         if ($url === "/") 
